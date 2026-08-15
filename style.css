@@ -474,13 +474,14 @@ body.TemaEscuro {
     transform: translateX(18px);
   }
 
-  .Jogo {
-    height: calc(100vh - 105px);
-    gap: 6px;
-    padding: 6px 6px 0;
-    overflow: hidden;
-  }
+ .Jogo {
+  min-height: calc(100vh - 105px);
 
+  gap: 6px;
+  padding: 6px;
+
+  overflow: visible;
+}
   .Coluna {
     padding: 7px;
   }
