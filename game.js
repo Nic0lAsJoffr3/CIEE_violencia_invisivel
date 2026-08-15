@@ -28,16 +28,16 @@ async function salvarResultado(nome, pontuacao) {
 
 
 const jogo = [
-    ["Palavra", " 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae justo nec erat tincidunt malesuada. Sed euismod, nisl vel tincidunt facilisis, nisl justo consequat augue, vitae consectetur erat libero vel mauris."],
-    ["Palavra2", "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent volutpat, neque vel consequat tincidunt, sapien justo malesuada libero, vitae tincidunt erat arcu non neque. Curabitur interdum augue at lorem malesuada, vel suscipit sapien fermentum."],
-    ["Palavra3", "3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consectetur, sapien sed tincidunt consequat, justo libero malesuada ipsum, nec vulputate erat neque non nisl. Suspendisse potenti. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices."],
-    ["Palavra4", "4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt, lorem vitae volutpat facilisis, neque erat consectetur justo, sed tincidunt sapien massa vitae purus. Aliquam erat volutpat. Donec commodo, libero vel suscipit malesuada, justo erat consequat."],
-    ["Palavra5", "5 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam malesuada, augue sed tincidunt volutpat, justo lorem tincidunt lectus, vitae posuere risus magna non mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."],
-    ["Palavra6", "6 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt, sapien vitae commodo consequat, mauris erat malesuada justo, nec fermentum libero neque id lorem. Integer consequat, felis at tincidunt malesuada, justo turpis interdum lacus, vitae facilisis."],
-    ["Palavra7", "7 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consequat, neque vitae tincidunt malesuada, libero lorem posuere erat, vel suscipit justo sapien nec ipsum. Proin vulputate, erat sed malesuada consectetur, sapien nisl tincidunt lacus, vitae consequat."],
-    ["Palavra8", "8 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae lorem sed libero tincidunt consequat. Suspendisse potenti. Donec malesuada, neque vitae ullamcorper tincidunt, erat justo volutpat sapien, non consectetur ipsum lorem vitae nisl. Sed euismod."],
-    ["Palavra9", "9 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt, sapien vitae volutpat malesuada, justo libero consequat neque, at tincidunt nisl erat non ipsum. Morbi malesuada, purus sed facilisis tincidunt, augue lorem consectetur erat, vitae suscipit."],
-    ["Palavra10", "10 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam volutpat, sapien non malesuada consequat, justo libero tincidunt lorem, vitae consectetur erat neque sed ipsum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."]
+    ["Gaslighting", "Manipulação psicológica que faz uma pessoa duvidar da própria percepção, memória ou julgamento."],
+    ["Mansplaining", "Quando um homem explica algo de forma condescendente a uma mulher, presumindo que ela não possui conhecimento sobre o assunto."],
+    ["Manterrupting", "Interrupção frequente ou desnecessária da fala de uma mulher, impedindo que ela conclua seu raciocínio."],
+    ["Microviolências", "Comportamentos sutis e repetitivos que desvalorizam, constrangem ou diminuem a autonomia e a confiança de uma pessoa."],
+    ["Deslegitimação", "Quando a opinião, experiência ou conhecimento de uma pessoa é desconsiderado ou tratado como menos importante."],
+    ["Silenciamento", "Quando uma pessoa é impedida, direta ou indiretamente, de expressar suas opiniões, ideias ou experiências."],
+    ["Apropriação de ideias", "Quando uma ideia apresentada por uma pessoa é ignorada ou posteriormente atribuída a outra pessoa."],
+    ["Violência simbólica", "Forma de violência exercida por meio de valores, comportamentos e padrões sociais que naturalizam relações de dominação."],
+    ["Objetificação", "Redução de uma pessoa à condição de objeto, desconsiderando sua individualidade e autonomia."],
+    ["Estereótipo de gênero", "Crença generalizada sobre características, comportamentos ou papéis considerados próprios de homens ou mulheres."]
 ];
 
 const temaEscuro = document.getElementById("TemaEscuro");
