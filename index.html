@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="var.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Violência Invisível</title>
+</head>
+
+<body>
+
+    <header class="Cabecalho">
+
+        <div class="TituloJogo">
+            <h1>Violência Invisível</h1>
+            <span>Reconhecer também é combater.</span>
+        </div>
+
+        <div class="Tema">
+            <label class="ControleTema">
+                <svg class="IconeTema IconeSol" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <line x1="12" y1="2" x2="12" y2="5"></line>
+                    <line x1="12" y1="19" x2="12" y2="22"></line>
+                    <line x1="4.93" y1="4.93" x2="7.05" y2="7.05"></line>
+                    <line x1="16.95" y1="16.95" x2="19.07" y2="19.07"></line>
+                    <line x1="2" y1="12" x2="5" y2="12"></line>
+                    <line x1="19" y1="12" x2="22" y2="12"></line>
+                    <line x1="4.93" y1="19.07" x2="7.05" y2="16.95"></line>
+                    <line x1="16.95" y1="7.05" x2="19.07" y2="4.93"></line>
+                </svg>
+
+                <input type="checkbox" id="TemaEscuro">
+
+                <span class="Switch"></span>
+
+                <svg class="IconeTema IconeLua" viewBox="0 0 24 24">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3
+            7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </label>
+        </div>
+
+    </header>
+
+
+    <div id="TelaInicial" class="TelaInicial">
+
+        <div class="CaixaInicio">
+
+            <h1>Violência Invisível</h1>
+
+            <p>
+                Identifique as formas de violência invisível
+                e descubra como elas podem se manifestar.
+            </p>
+
+            <input id="NomeJogador" type="text" placeholder="Seu nome" maxlength="100" autocomplete="name">
+
+            <button id="Comecar" type="button">
+                Começar
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <main id="Jogo" class="Jogo">
+
+        <section id="Palavra" class="Coluna ColunaEsquerda">
+
+            <h2>Palavras</h2>
+
+        </section>
+
+
+        <section id="Explicacao" class="Coluna ColunaDireita">
+
+            <h2>Explicações</h2>
+
+        </section>
+
+    </main>
+
+
+    <button id="Enviar" class="Enviar" type="button">
+        Finalizar
+    </button>
+
+
+    <section id="Resultado">
+
+        <h2>Resultado</h2>
+
+        <p>
+            Jogador:
+            <strong id="NomeFinal"></strong>
+        </p>
+
+        <p>
+            Tempo:
+            <strong id="TempoFinal">0</strong>
+            segundos
+        </p>
+
+        <p>
+            Acertos:
+            <strong id="AcertosFinal">0</strong>
+        </p>
+
+        <p class="Pontuacao" id="PontuacaoFinal">
+            0 pontos
+        </p>
+
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="game.js"></script>
+</body>
+
+</html>

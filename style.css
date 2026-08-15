@@ -1,0 +1,570 @@
+
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Cabecalho {
+  width: 100%;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  background-color: var(--cor-fundo);
+}
+
+.TituloJogo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: auto;
+}
+
+.TituloJogo h1 {
+  margin: 0;
+  color: var(--cor-texto);
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.TituloJogo span {
+  margin-top: 4px;
+  color: var(--cor-texto-secundario);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.Tema {
+  display: flex;
+  align-items: center;
+}
+
+.ControleTema {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.ControleTema input {
+  display: none;
+}
+
+.IconeTema {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: var(--cor-texto-secundario);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+  transition: 0.2s;
+}
+
+.Switch {
+  position: relative;
+  width: 42px;
+  height: 22px;
+  background-color: var(--cor-borda);
+  border-radius: 20px;
+  transition: 0.2s;
+}
+
+.Switch::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 3px;
+  left: 3px;
+  background-color: var(--cor-superficie);
+  border-radius: 50%;
+  box-shadow: 0 1px 4px var(--cor-sombra);
+  transition: transform 0.2s;
+}
+
+.ControleTema input:checked ~ .Switch {
+  background-color: var(--cor-destaque);
+}
+
+.ControleTema input:checked ~ .Switch::before {
+  transform: translateX(20px);
+}
+
+.ControleTema:hover .IconeTema {
+  stroke: var(--cor-destaque);
+}
+
+.ControleTema:hover .Switch {
+  box-shadow: 0 0 0 2px rgba(194, 24, 91, 0.12);
+}
+
+.TelaInicial {
+  position: fixed;
+  inset: 0;
+  background-color: var(--cor-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  z-index: 100;
+}
+
+.CaixaInicio {
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  box-shadow: 0 5px 20px var(--cor-sombra);
+  text-align: center;
+}
+
+.CaixaInicio h1 {
+  margin: 0 0 15px;
+  color: var(--cor-texto);
+}
+
+.CaixaInicio p {
+  margin: 0 0 20px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--cor-texto-secundario);
+}
+
+#NomeJogador {
+  width: 100%;
+  padding: 13px;
+  margin: 0 0 15px;
+  background-color: var(--cor-botao);
+  color: var(--cor-texto);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  font-size: 17px;
+  outline: none;
+  transition: 0.2s;
+}
+
+#NomeJogador:focus {
+  border-color: var(--cor-destaque);
+  box-shadow: 0 0 0 2px rgba(194, 24, 91, 0.15);
+}
+
+#NomeJogador::placeholder {
+  color: var(--cor-texto-secundario);
+}
+
+#Comecar {
+  width: 100%;
+  padding: 13px;
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-primaria);
+  border: none;
+  border-radius: var(--raio);
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#Comecar:hover {
+  background-color: var(--cor-primaria-hover);
+}
+
+.Jogo {
+  width: 100%;
+  height: calc(100vh - 115px);
+  min-height: 0;
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  padding: 10px 10px 0;
+  overflow: hidden;
+}
+
+.Coluna {
+  height: 100%;
+  min-height: 0;
+  margin: 0;
+  padding: 10px;
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 8px var(--cor-sombra);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--cor-borda) transparent;
+}
+
+.Coluna::-webkit-scrollbar {
+  width: 5px;
+}
+
+.Coluna::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.Coluna::-webkit-scrollbar-thumb {
+  background-color: var(--cor-borda);
+  border-radius: 10px;
+}
+
+.Coluna::-webkit-scrollbar-thumb:hover {
+  background-color: var(--cor-destaque);
+}
+
+.ColunaEsquerda {
+  width: 32%;
+  min-width: 150px;
+  flex-shrink: 0;
+}
+
+.ColunaDireita {
+  flex: 1;
+  min-width: 0;
+}
+
+.Coluna h2 {
+  width: 100%;
+  margin: 5px 0 12px;
+  color: var(--cor-texto);
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.Palavra {
+  width: 100%;
+  min-height: 44px;
+  padding: 7px 9px;
+  margin: 2px 0;
+  background-color: var(--cor-botao);
+  color: var(--cor-texto);
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--raio);
+  font-size: 15px;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+}
+
+.Explicacao {
+  width: 100%;
+  min-height: 50px;
+  padding: 9px;
+  margin: 3px 0;
+  background-color: var(--cor-botao);
+  color: var(--cor-texto);
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--raio);
+  font-size: 14px;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+}
+
+.Palavra:hover,
+.Explicacao:hover {
+  background-color: var(--cor-botao-hover);
+  transform: translateY(-1px);
+}
+
+.Palavra:active,
+.Explicacao:active {
+  transform: translateY(0);
+}
+
+.Palavra:disabled,
+.Explicacao:disabled {
+  cursor: default;
+  opacity: 0.85;
+}
+
+.Selecionado {
+  background-color: var(--cor-botao-hover);
+  border-color: var(--cor-destaque);
+  box-shadow: 0 0 0 2px rgba(194, 24, 91, 0.15);
+}
+
+.s1 {
+  border-color: #e53935;
+  box-shadow: 0 0 5px rgba(229, 57, 53, 0.35);
+}
+
+.s2 {
+  border-color: #1e88e5;
+  box-shadow: 0 0 5px rgba(30, 136, 229, 0.35);
+}
+
+.s3 {
+  border-color: #fbc02d;
+  box-shadow: 0 0 5px rgba(251, 192, 45, 0.35);
+}
+
+.s4 {
+  border-color: #fb8c00;
+  box-shadow: 0 0 5px rgba(251, 140, 0, 0.35);
+}
+
+.s5 {
+  border-color: #00acc1;
+  box-shadow: 0 0 5px rgba(0, 172, 193, 0.35);
+}
+
+.s6 {
+  border-color: #8e24aa;
+  box-shadow: 0 0 5px rgba(142, 36, 170, 0.35);
+}
+
+.s7 {
+  border-color: #43a047;
+  box-shadow: 0 0 5px rgba(67, 160, 71, 0.35);
+}
+
+.s8 {
+  border-color: #ec407a;
+  box-shadow: 0 0 5px rgba(236, 64, 122, 0.35);
+}
+
+.s9 {
+  border-color: #546e7a;
+  box-shadow: 0 0 5px rgba(84, 110, 122, 0.35);
+}
+
+.s10 {
+  border-color: #00897b;
+  box-shadow: 0 0 5px rgba(0, 137, 123, 0.35);
+}
+
+.Enviar {
+  width: calc(100% - 30px);
+  max-width: 500px;
+  height: 50px;
+  display: block;
+  margin: 16px auto 15px;
+  padding: 0 25px;
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-primaria);
+  border: none;
+  border-radius: var(--raio);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(40, 117, 31, 0.25);
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.Enviar:hover {
+  background-color: var(--cor-primaria-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(40, 117, 31, 0.3);
+}
+
+.Enviar:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(40, 117, 31, 0.2);
+}
+
+#Resultado {
+  display: none;
+  width: calc(100% - 30px);
+  max-width: 700px;
+  min-height: 200px;
+  margin: 20px auto;
+  padding: 25px;
+  background-color: var(--cor-resultado);
+  color: var(--cor-texto);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  text-align: center;
+  box-shadow: 0 5px 20px var(--cor-sombra);
+}
+
+#Resultado h2 {
+  margin-top: 0;
+}
+
+.Pontuacao {
+  font-size: 40px;
+  font-weight: bold;
+  color: var(--cor-destaque);
+}
+
+body.TemaEscuro {
+  --cor-fundo: #171116;
+  --cor-superficie: #241a20;
+  --cor-botao: #2c2027;
+  --cor-botao-hover: #392630;
+  --cor-texto: #f8e9ef;
+  --cor-texto-secundario: #c7aeb8;
+  --cor-borda: #503541;
+  --cor-primaria: #28751f;
+  --cor-primaria-hover: #1f5f18;
+  --cor-texto-primaria: #ffffff;
+  --cor-destaque: #e0447a;
+  --cor-destaque-hover: #bd285d;
+  --cor-sombra: rgba(0, 0, 0, 0.35);
+  --cor-resultado: #241a20;
+  --cor-overlay: rgba(23, 17, 22, 0.96);
+}
+
+@media (max-width: 600px) {
+  .Cabecalho {
+    height: 50px;
+    padding: 7px 10px;
+  }
+
+  .TituloJogo h1 {
+    font-size: 17px;
+  }
+
+  .TituloJogo span {
+    font-size: 9px;
+  }
+
+  .ControleTema {
+    gap: 5px;
+  }
+
+  .IconeTema {
+    width: 17px;
+    height: 17px;
+  }
+
+  .Switch {
+    width: 38px;
+    height: 20px;
+  }
+
+  .Switch::before {
+    width: 14px;
+    height: 14px;
+    top: 3px;
+    left: 3px;
+  }
+
+  .ControleTema input:checked ~ .Switch::before {
+    transform: translateX(18px);
+  }
+
+  .Jogo {
+    height: calc(100vh - 105px);
+    gap: 6px;
+    padding: 6px 6px 0;
+    overflow: hidden;
+  }
+
+  .Coluna {
+    padding: 7px;
+  }
+
+  .ColunaEsquerda {
+    width: 34%;
+    min-width: 90px;
+  }
+
+  .ColunaDireita {
+    flex: 1;
+  }
+
+  .Coluna h2 {
+    font-size: 17px;
+    margin: 4px 0 8px;
+  }
+
+  .Palavra {
+    min-height: 40px;
+    padding: 6px;
+    margin: 1px 0;
+    font-size: 13px;
+    line-height: 1.2;
+    border-width: 1px;
+  }
+
+  .Explicacao {
+    min-height: 45px;
+    padding: 7px;
+    margin: 2px 0;
+    font-size: 12px;
+    line-height: 1.25;
+    border-width: 1px;
+  }
+
+  .Enviar {
+    width: calc(100% - 20px);
+    height: 45px;
+    margin: 12px auto 15px;
+    font-size: 16px;
+  }
+
+  #Resultado {
+    width: calc(100% - 20px);
+    margin: 10px auto;
+    padding: 20px 15px;
+  }
+
+  .Pontuacao {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 400px) {
+  .CaixaInicio {
+    padding: 25px 20px;
+  }
+
+  .CaixaInicio h1 {
+    font-size: 24px;
+  }
+
+  .CaixaInicio p {
+    font-size: 15px;
+  }
+
+  .ColunaEsquerda {
+    width: 35%;
+    min-width: 80px;
+  }
+
+  .Palavra {
+    min-height: 38px;
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  .Explicacao {
+    padding: 6px;
+    font-size: 11px;
+  }
+}
+
+.Enviar{
+    transform: translateY(-1vh) !important;
+}

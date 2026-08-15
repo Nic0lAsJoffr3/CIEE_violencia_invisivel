@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Violência Invisível</title>
+    <link rel="stylesheet" href="var.css">
+    <link rel="stylesheet" href="tela.css">
+</head>
+
+<body>
+
+    <main class="Tela">
+
+        <section class="Convite">
+
+            <svg class="DecoracaoConvite" viewBox="0 0 500 700" aria-hidden="true">
+                <circle cx="420" cy="80" r="130" />
+                <circle cx="430" cy="90" r="90" />
+                <path d="M0 560 C120 480 180 620 300 540 S450 470 500 520" />
+                <path d="M0 590 C120 510 180 650 300 570 S450 500 500 550" />
+            </svg>
+
+            <div class="Titulo">
+                <span>VIOLÊNCIA</span>
+                <strong>INVISÍVEL</strong>
+            </div>
+
+            <p class="Descricao">
+                Aprenda a reconhecer os sinais e combater a violência contra a mulher.
+            </p>
+
+            <div class="QRContainer">
+                <div id="QRCode"></div>
+            </div>
+
+            <h2>Pronto para começar?</h2>
+
+            <p class="Instrucao">
+                Aponte a câmera do celular para o código acima.
+            </p>
+
+        </section>
+
+        <section class="Ranking">
+
+            <div class="RankingCabecalho">
+                <span>RANKING</span>
+                <h1>Resultados</h1>
+            </div>
+
+            <div id="ListaRanking" class="ListaRanking">
+
+                <div class="Carregando">
+                    Carregando resultados...
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script src="tela.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,444 @@
+
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Tela {
+    width: 100%;
+    height: 100vh;
+    padding: 35px;
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) minmax(400px, 1.3fr);
+    gap: 30px;
+}
+
+.Convite,
+.Ranking {
+    min-width: 0;
+    min-height: 0;
+    background: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    box-shadow: 0 8px 25px var(--cor-sombra);
+}
+
+.Convite {
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.Titulo {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.9;
+    margin-bottom: 25px;
+}
+
+.Titulo span {
+    font-size: clamp(30px, 4vw, 52px);
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: var(--cor-texto);
+}
+
+.Titulo strong {
+    font-size: clamp(40px, 5vw, 70px);
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: var(--cor-destaque);
+}
+
+.Descricao {
+    max-width: 520px;
+    margin: 0 0 30px;
+    color: var(--cor-texto-secundario);
+    font-size: clamp(16px, 1.4vw, 20px);
+    line-height: 1.5;
+}
+.QRContainer {
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border: 1px solid var(--cor-borda);
+    border-radius: 14px;
+    box-shadow: 0 6px 18px var(--cor-sombra);
+}
+
+#QRCode {
+    width: 190px;
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#QRCode img,
+#QRCode canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.Convite h2 {
+    margin: 28px 0 8px;
+    font-size: 25px;
+    color: var(--cor-destaque);
+}
+
+.Instrucao {
+    max-width: 400px;
+    margin: 0;
+    color: var(--cor-texto-secundario);
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.Ranking {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.RankingCabecalho {
+    flex-shrink: 0;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--cor-borda);
+}
+
+.RankingCabecalho span {
+    color: var(--cor-destaque);
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.RankingCabecalho h1 {
+    margin: 5px 0 0;
+    font-size: clamp(30px, 3vw, 45px);
+    line-height: 1;
+    color: var(--cor-texto);
+}
+
+.ListaRanking {
+    flex: 1;
+    min-height: 0;
+    margin-top: 20px;
+    padding-right: 0;
+    overflow: hidden;
+}
+
+.ItemRanking {
+    width: 100%;
+    min-height: 50px;
+    margin-bottom: 7px;
+    padding: 7px 14px;
+
+    display: grid;
+    grid-template-columns: 42px 1fr auto;
+    align-items: center;
+    gap: 12px;
+
+    background: var(--ranking-fundo);
+    border: 1px solid var(--ranking-borda);
+    border-left: 4px solid var(--ranking-borda);
+    border-radius: var(--raio);
+}
+
+.ItemRanking.Primeiro {
+    min-height: 82px;
+    padding: 10px 16px;
+
+    background: var(--ranking-fundo-destaque);
+    border: 1px solid var(--ranking-primeiro);
+    border-left: 7px solid var(--ranking-primeiro);
+}
+
+.ItemRanking.Segundo {
+    min-height: 68px;
+    padding: 8px 15px;
+    border-left: 6px solid var(--ranking-segundo);
+}
+
+.ItemRanking.Terceiro {
+    min-height: 60px;
+    padding: 7px 14px;
+    border-left: 5px solid var(--ranking-terceiro);
+}
+
+.Posicao {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--cor-texto);
+    color: var(--cor-texto-primaria);
+
+    border-radius: 50%;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.ItemRanking.Primeiro .Posicao {
+    width: 52px;
+    height: 52px;
+    background: var(--ranking-primeiro);
+    font-size: 21px;
+}
+
+.ItemRanking.Segundo .Posicao {
+    width: 43px;
+    height: 43px;
+    background: var(--ranking-segundo);
+    font-size: 17px;
+}
+
+.ItemRanking.Terceiro .Posicao {
+    width: 38px;
+    height: 38px;
+    background: var(--ranking-terceiro);
+    font-size: 15px;
+}
+
+.Nome {
+    min-width: 0;
+    overflow: hidden;
+
+    color: var(--cor-texto);
+
+    font-size: 16px;
+    font-weight: bold;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ItemRanking.Primeiro .Nome {
+    font-size: 24px;
+}
+
+.ItemRanking.Segundo .Nome {
+    font-size: 20px;
+}
+
+.ItemRanking.Terceiro .Nome {
+    font-size: 18px;
+}
+
+.Pontos {
+    color: var(--ranking-primeiro);
+    font-size: 18px;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+.ItemRanking.Primeiro .Pontos {
+    font-size: 28px;
+}
+
+.ItemRanking.Segundo .Pontos {
+    font-size: 23px;
+}
+
+.ItemRanking.Terceiro .Pontos {
+    font-size: 21px;
+}
+
+.Carregando,
+.Vazio,
+.Erro {
+    min-height: 120px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: var(--cor-texto-secundario);
+    font-size: 17px;
+}
+
+.Erro {
+    color: var(--cor-destaque-hover);
+}
+
+@media (max-width: 900px) {
+    body {
+        overflow: auto;
+    }
+
+    .Tela {
+        height: auto;
+        min-height: 100vh;
+        padding: 20px;
+        grid-template-columns: 1fr;
+    }
+
+    .Convite {
+        min-height: 600px;
+    }
+
+    .Ranking {
+        min-height: 600px;
+    }
+}
+
+@media (max-width: 500px) {
+    .Tela {
+        padding: 12px;
+        gap: 15px;
+    }
+
+    .Convite {
+        padding: 25px 15px;
+        min-height: 520px;
+    }
+
+    .Ranking {
+        padding: 20px 15px;
+        min-height: 550px;
+    }
+
+    #QRCode {
+        width: 150px;
+        height: 150px;
+    }
+
+    .QRContainer {
+        padding: 10px;
+    }
+
+    .ItemRanking {
+        min-height: 48px;
+        grid-template-columns: 36px 1fr auto;
+        gap: 8px;
+        padding: 6px 10px;
+    }
+
+    .ItemRanking.Primeiro {
+        min-height: 68px;
+    }
+
+    .ItemRanking.Segundo {
+        min-height: 58px;
+    }
+
+    .ItemRanking.Terceiro {
+        min-height: 53px;
+    }
+
+    .Posicao {
+        width: 30px;
+        height: 30px;
+        font-size: 13px;
+    }
+
+    .ItemRanking.Primeiro .Posicao {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+    .ItemRanking.Segundo .Posicao {
+        width: 37px;
+        height: 37px;
+        font-size: 15px;
+    }
+
+    .ItemRanking.Terceiro .Posicao {
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+    }
+
+    .Nome {
+        font-size: 15px;
+    }
+
+    .ItemRanking.Primeiro .Nome {
+        font-size: 20px;
+    }
+
+    .ItemRanking.Segundo .Nome {
+        font-size: 17px;
+    }
+
+    .ItemRanking.Terceiro .Nome {
+        font-size: 16px;
+    }
+
+    .Pontos {
+        font-size: 16px;
+    }
+
+    .ItemRanking.Primeiro .Pontos {
+        font-size: 22px;
+    }
+
+    .ItemRanking.Segundo .Pontos {
+        font-size: 19px;
+    }
+
+    .ItemRanking.Terceiro .Pontos {
+        font-size: 18px;
+    }
+}.Convite {
+    position: relative;
+    isolation: isolate;
+}
+
+.DecoracaoConvite {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: -1;
+
+    pointer-events: none;
+
+    overflow: hidden;
+}
+
+.DecoracaoConvite circle {
+    fill: var(--cor-resultado);
+}
+
+.DecoracaoConvite path {
+    fill: none;
+    stroke: var(--cor-destaque);
+    stroke-width: 2;
+    opacity: 0.12;
+}.Convite > *:not(.DecoracaoConvite) {
+    position: relative;
+    z-index: 1;
+}
