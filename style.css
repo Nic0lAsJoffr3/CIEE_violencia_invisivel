@@ -218,6 +218,7 @@ body {
   overflow-x: hidden;
   scrollbar-width: thin;
   scrollbar-color: var(--cor-borda) transparent;
+  padding-bottom: 250px;
 }
 
 .Coluna::-webkit-scrollbar {
@@ -254,6 +255,7 @@ body {
   color: var(--cor-texto);
   font-size: 20px;
   flex-shrink: 0;
+  
 }
 
 .Palavra {
@@ -366,7 +368,7 @@ body {
 .Enviar {
   width: calc(100% - 30px);
   max-width: 500px;
-  height: 50px;
+  height: 100px;
   display: block;
   margin: 16px auto 15px;
   padding: 0 25px;
@@ -475,7 +477,7 @@ body.TemaEscuro {
     transform: translateX(18px);
   }
 
- .Jogo {
+  .Jogo {
   min-height: calc(100vh - 105px);
 
   gap: 6px;
@@ -483,6 +485,7 @@ body.TemaEscuro {
 
   overflow: visible;
 }
+
   .Coluna {
     padding: 7px;
   }
@@ -568,5 +571,8 @@ body.TemaEscuro {
 }
 
 .Enviar{
-    transform: translateY(-1vh) !important;
+    position: absolute;
+    bottom: 1vh;
+    font-size: 3vh;
+    justify-self: center;
 }
